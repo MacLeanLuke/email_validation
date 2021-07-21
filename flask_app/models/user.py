@@ -108,7 +108,7 @@ class User():
             is_valid = False
 
         if not password_regex.match(data['password']):
-            flash("Please enter a password with more than 10 alpha-numeric characters.")
+            flash("Please enter a password with 10 or more alpha-numeric characters.")
             is_valid = False
 
         if data['password'] != data['confirm_password']:
