@@ -163,6 +163,16 @@ JOIN books ON authors_favorite_books.book_id = books.id
 WHERE books.id = 5;
 
 
+server {
+    listen 80;
+    server_name 3.14.4.84;
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/home/ubuntu/email_validation/email_validation.sock;
+    }
+}
+
+sudo ln -s /etc/nginx/sites-available/email_validation /etc/nginx/sites-enabled
 
 
 
